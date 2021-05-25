@@ -5,7 +5,7 @@ let size = 15;
 let start = 0;
 
 function setup() {
-  createCanvas(400, 400);
+  createCanvas(windowWidth, windowHeight);
   textSize(20);
   textAlign(CENTER);
   nextDir = int(random(0, 4));
