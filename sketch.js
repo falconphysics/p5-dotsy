@@ -6,6 +6,13 @@ let start = 0;
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
+  if(height>width){
+  size = 15/400*height;
+    speed = 2/400*height;
+  }else{
+    size = 15/400*width;
+    speed = 2/400*width;
+  }
   textSize(20);
   textAlign(CENTER);
   nextDir = int(random(0, 4));
