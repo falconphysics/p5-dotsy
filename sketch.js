@@ -3,17 +3,19 @@ let speed = 2;
 let nextDir = 0;
 let size = 15;
 let start = 0;
+let screenSize;
 
 function setup() {
-  createCanvas(windowWidth, windowHeight);
-  if(height>width){
-  size = 15/400*height;
-    speed = 2/400*height;
+  if(windowWidth>windowHeight){
+    screenSize = windowHeight;
   }else{
-    size = 15/400*width;
-    speed = 2/400*width;
+    screenSize = windowWidth;
   }
-  textSize(20);
+  createCanvas(screenSize, screenSize);
+  size = 15/400*height;
+  speed = 2/400*height;
+  
+  textSize(20/400*height);
   textAlign(CENTER);
   nextDir = int(random(0, 4));
 }
@@ -141,11 +143,13 @@ function mousePressed() {
 }
 
 function drawArrow(ang) {
+  let scale = width/400*1.25;
+  
   push();
-  translate(width - 30, height - 30);
+  translate(width - 30*scale, height - 30*scale);
   rotate(ang);
-  rect(-2, -10, 4, 20);
-  triangle(-7, -10, 7, -10, 0, -18);
+  rect(-2*scale, -10*scale, 4*scale, 20*scale);
+  triangle(-7*scale, -10*scale, 7*scale, -10*scale, 0, -18*scale);
   pop();
 }
 
