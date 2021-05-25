@@ -157,6 +157,6 @@ function restart() {
   loop();
 }
 
-function touchReleased() {
+function touchEnded() {
   return false;
 }
